@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WebView1Controller.swift
 //  Swift4WebView
 //
 //  Created by 舟木正憲 on 2018/09/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIWebViewDelegate {
+class WebView1Controller: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
     
@@ -17,11 +17,12 @@ class ViewController: UIViewController, UIWebViewDelegate {
         
         webView.delegate = self
         
-        let url = URL(string: "https://www.yahoo.co.jp")
+        let url = URL(string: "https://www.mbga.jp/")
         let urlRequest = URLRequest(url: url!)
         webView.loadRequest(urlRequest)
-        
+
     }
+    
     
     func webViewDidStartLoad(_ webView: UIWebView) {
         
@@ -34,12 +35,21 @@ class ViewController: UIViewController, UIWebViewDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        // Dispose of any resources that can be recreated.
     }
+    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
